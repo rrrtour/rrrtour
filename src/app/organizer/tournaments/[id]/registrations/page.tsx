@@ -237,7 +237,7 @@ export default function ManageRegistrationsPage() {
 
   const selectedPendingIds = useMemo(
     () =>
-      [...selected].filter((id) => {
+      Array.from(selected).filter((id) => {
         const r = registrations.find((reg) => reg.id === id);
         return r?.status === 'PENDING';
       }),
